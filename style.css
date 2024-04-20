@@ -33,7 +33,7 @@ body {
   border-top-left-radius: 200px;
   border-bottom-left-radius: 200px;
   background: blue;
-  width: 50%;
+  width: 35%;
 }
 
 .skills-container {
@@ -42,50 +42,67 @@ body {
   justify-content: space-between;
   margin: 0;
   padding: 0;
-  width: 50%;
+  width: 45%;
   gap: 1px;
+}
+
+.skill-bar {
+  border: 1px solid blue;
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  background: rgb(221, 225, 255);
+}
+
+.skill-bar span {
+  margin-left: 20px;
+  padding-right: 10px;
 }
 
 .skill-level {
   text-align: right;
-  padding: 2px;
   color: white;
-  background: blue;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  width: 100%;
+  width: 0;
+  background-color: transparent;
+  padding: 2%;
 }
 
-@media screen and (orientation: landscape) {
-  .octopus {
-    min-width: 400px;
-    width: auto;
-    height: auto;
-  }
+span {
+  font-size: 12px;
 }
 
-@media screen and (orientation: portrait) {
-  .octopus {
-    transform: rotate(90deg);
-    min-width: 90vh;
-  } 
-
-  .skill-name {
-    font-size: 1.125em;
-  }
+.skill-level[style*="width: 0"] {
+  background-color: transparent;
+  color: black;
 }
+
+.skill-level:not([style*="width: 0"]) {
+  background-color: blue;
+}
+
+.year-goal {
+  border-right: 1px solid blue;
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
+}
+
 
 @media only screen and (orientation: portrait) and (max-width: 279px) {
   .octopus {
     transform: rotate(90deg);
     min-width: 70vh;
-    height: 40vh;
     max-height: 100%;
   }
 
-  .skill-name {
+  .skill-level {
+    font-weight: bold;
     font-size: 10px;
-    color: black;
+    color: rgb(5, 22, 98);
+    padding: 3%;
   }
 
   .skill {
@@ -95,12 +112,14 @@ body {
   .skill-name {
     position: absolute;
     top: 0;
-    left: 90%;
-    margin-left: 4px; 
+    left: 100%;
+    margin-left: 10px;
+    color: black;
   }
 
   span {
-    width: 100px;
+    width: 70%;
+    font-weight: bold;
   }
 }
 
@@ -108,253 +127,529 @@ body {
   .octopus {
     transform: rotate(90deg);
     min-width: 70vh;
-    height: 40vh;
     max-height: 100%;
   }
 
-  .skill-name {
-    font-size: 10px;
-    color: black;
+  .head {
+    width: 35%;
+  }
+
+  .skills-container {
+    width: 40%;
+  }
+
+  .skill-level {
+    padding: 4%;
   }
 
   .skill {
     position: relative;
   }
 
-  .skill-level {
-    padding: 4px;
-  }
-  
   .skill-name {
     position: absolute;
     top: 0;
-    left: 85%;
-    margin-left: 4px; 
+    left: 100%;
+    margin-left: 10px; 
+    font-size: 12px;
+    color: black;
+    width: 85%;
+  }
+
+  .plans {
+    font-size: 12px;
   }
 
   span {
-    width: 100px;
+    width: 100%;
+    font-weight: bold;
   }
 }
 
 @media only screen and (orientation: portrait) and (min-width: 320px) and (max-width: 359px) {
   .octopus {
     transform: rotate(90deg);
-    min-width: 100vh;
+    min-width: 80vh;
+    max-height: 100%;
+  }
+
+  .skill-bar span {
+    margin-left: 5px;
+    padding-right: 10px;
+}
+
+  .skill-level {
+    padding: 4%;
+  }
+
+  .skill {
+    position: relative;
+  }
+
+  .skill-name {
+    position: absolute;
+    top: 0;
+    left: 95%;
+    width: 75%;
+    margin-left: 5px;
+    font-size: 10px;
+    color: black;
+  }
+
+  .plans {
+    font-size: 10px;
+  }
+
+  span {
+    width: 100%;
+    font-weight: bold;
   }
 }
 
 @media only screen and (orientation: portrait) and (min-width: 360px) and (max-width: 479px) {
   .octopus {
     transform: rotate(90deg);
-    min-width: 90vh;
-  }
-}
-
-@media only screen and (orientation: landscape) and (min-width: 360px) and (max-width: 479px) {
-  .octopus {
-    transform: rotate(90deg);
-    min-width: 470px;
-  }
-
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .octopus {
-    width: 700px;
+    min-width: 95vh;
   }
 
   .head {
-    border-top-left-radius: 18em;
-    border-bottom-left-radius: 18em;
+    border-top-left-radius: 85em;
+    border-bottom-left-radius: 85em;
+    width: 30%;
   }
 
   .skills-container {
-    gap: 5px;
+    gap: 4px;
+    width: 70%;
   }
 
+  .skill-bar {
+    border-top-right-radius: 2em;
+    border-bottom-right-radius: 2em;
+    font-weight: bold;
+  }
+  
   .skill-level {
-    padding: 0;
-    border-top-right-radius: 2.6em;
-    border-bottom-right-radius: 2.6em;
+    padding: 3px;
+    border-top-right-radius: 3em;
+    border-bottom-right-radius: 3em;
+  }
+
+  .skill-name, .plans, .year-goal {
+    font-size: 12px;
   }
 
   .skill-name {
-    font-size: 1em;
+    padding-right: 10px;
+  }
+
+  .skill-level[style*="width: 0"] .skill-name {
+    display: none;
+  }
+
+  .year-goal {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .octopus {
+    width: 470px;
+    height: 330px;
+  }
+
+  .head {
+    border-top-left-radius: 74em;
+    border-bottom-left-radius: 74em;
+    width: 40%;
+  }
+
+  .skills-container {
+    gap: 1px;
+    width: 60%;
+  }
+
+  .skill-bar {
+    border-top-right-radius: 2em;
+    border-bottom-right-radius: 2em;
+  }
+
+  .skill-bar span {
+    margin-left: 5px;
+    padding-right: 5px;
+    font-weight: bold;
+  }
+  
+  .skill-level {
+    padding: 4px;
+    border-top-right-radius: 3em;
+    border-bottom-right-radius: 3em;
+  }
+
+  .skill-name, .plans, .year-goal {
+    font-size: 10px;
+  }
+
+  .skill-name {
+    padding-right: 10px;
+  }
+
+  .skill-level[style*="width: 0"] .skill-name {
+    display: none;
+  }
+
+  .year-goal {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .octopus {
+    width: 750px;
+    height: 350px;
+  }
+
+  .head {
+    border-top-left-radius: 45em;
+    border-bottom-left-radius: 45em;
+    width: 35%;
+  }
+
+  .skills-container {
+    gap: 1px;
+    width: 75%;
+  }
+
+  .skill-bar {
+    border-top-right-radius: 2em;
+    border-bottom-right-radius: 2em;
+  }
+  
+  .skill-level {
+    padding: 3px;
+    border-top-right-radius: 3em;
+    border-bottom-right-radius: 3em;
+  }
+
+  .skill-name, .plans, .year-goal {
+    font-size: 14px;
+  }
+
+  .skill-name {
+    padding-right: 10px;
+  }
+
+  .skill-level[style*="width: 0"] .skill-name {
+    display: none;
+  }
+
+  .year-goal {
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .octopus {
-    width: 850px;
+    width: 900px;
+    height: 450px;
   }
 
   .head {
-    border-top-left-radius: 18em;
-    border-bottom-left-radius: 18em;
+    border-top-left-radius: 45em;
+    border-bottom-left-radius: 45em;
+    width: 35%;
   }
 
   .skills-container {
     gap: 5px;
+    width: 75%;
   }
 
+  .skill-bar {
+    border-top-right-radius: 3em;
+    border-bottom-right-radius: 3em;
+  }
+  
   .skill-level {
-    padding: 4px;
-    border-top-right-radius: 2.6em;
-    border-bottom-right-radius: 2.6em;
+    padding: 5px;
+    border-top-right-radius: 3em;
+    border-bottom-right-radius: 3em;
+  }
+
+  .skill-name, .plans, .year-goal {
+    font-size: 16px;
   }
 
   .skill-name {
-    font-size: 1em;
+    padding-right: 10px;
+  }
+
+  .skill-level[style*="width: 0"] .skill-name {
+    display: none;
+  }
+  
+  .year-goal {
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1919px) {
   .octopus {
-    width: 900px;
+    width: 1100px;
+    height: 500px;
   }
 
   .head {
-    border-top-left-radius: 18em;
-    border-bottom-left-radius: 18em;
+    border-top-left-radius: 45em;
+    border-bottom-left-radius: 45em;
+    width: 35%;
   }
 
   .skills-container {
     gap: 5px;
+    width: 75%;
   }
 
+  .skill-bar {
+    border-top-right-radius: 3em;
+    border-bottom-right-radius: 3em;
+  }
+  
   .skill-level {
-    padding: 4px;
-    border-top-right-radius: 2.4em;
-    border-bottom-right-radius: 2.4em;
+    padding: 5px;
+    border-top-right-radius: 3em;
+    border-bottom-right-radius: 3em;
+  }
+
+  .skill-name, .plans, .year-goal {
+    font-size: 16px;
   }
 
   .skill-name {
-    font-size: 1.2em;
+    padding-right: 10px;
+  }
+
+  .skill-level[style*="width: 0"] .skill-name {
+    display: none;
+  }
+
+  .year-goal {
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 }
 
 @media only screen and (min-width: 1920px) and (max-width: 2559px) {
   .octopus {
-    width: 1000px;
+    width: 1600px;
+    height: 650px;
   }
 
   .head {
-    border-top-left-radius: 18em;
-    border-bottom-left-radius: 18em;
+    border-top-left-radius: 45em;
+    border-bottom-left-radius: 45em;
+    width: 35%;
   }
 
   .skills-container {
     gap: 5px;
+    width: 75%;
   }
 
+  .skill-bar {
+    border-top-right-radius: 3em;
+    border-bottom-right-radius: 3em;
+  }
+  
   .skill-level {
-    padding: 4px;
-    border-top-right-radius: 2.4em;
-    border-bottom-right-radius: 2.4em;
+    padding: 5px;
+    border-top-right-radius: 3em;
+    border-bottom-right-radius: 3em;
+  }
+
+  .skill-name, .plans, .year-goal {
+    font-size: 1.75rem;
   }
 
   .skill-name {
-    font-size: 1.5em;
+    padding-right: 20px;
+  }
+
+  .skill-level[style*="width: 0"] .skill-name {
+    display: none;
+  }
+
+  .year-goal {
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 }
 
 @media only screen and (min-width: 2560px) and (max-width: 3349px) {
   .octopus {
-    width: 1500px;
+    width: 1900px;
+    height: 800px;
   }
 
   .head {
-    border-top-left-radius: 19em;
-    border-bottom-left-radius: 19em;
+    border-top-left-radius: 45em;
+    border-bottom-left-radius: 45em;
+    width: 35%;
   }
 
   .skills-container {
-    gap: 6px;
+    gap: 4px;
+    width: 75%;
   }
 
+  .skill-bar {
+    border-top-right-radius: 3em;
+    border-bottom-right-radius: 3em;
+  }
+  
   .skill-level {
-    padding: 7px;
-    border-top-right-radius: 2.5em;
-    border-bottom-right-radius: 2.5em;
+    padding: 4px;
+    border-top-right-radius: 3em;
+    border-bottom-right-radius: 3em;
+  }
+
+  .skill-name, .plans, .year-goal {
+    font-size: 2.5rem;
   }
 
   .skill-name {
-    font-size: 1.625em;
+    padding-right: 20px;
+  }
+
+  .skill-level[style*="width: 0"] .skill-name {
+    display: none;
   }
 }
 
 @media only screen and (min-width: 3440px) and (max-width: 3839px) {
   .octopus {
-    width: 1600px;
+    width: 2500px;
+    height: 1200px;
   }
 
   .head {
-    border-top-left-radius: 20em;
-    border-bottom-left-radius: 20em;
+    border-top-left-radius: 45em;
+    border-bottom-left-radius: 45em;
+    width: 35%;
   }
 
   .skills-container {
     gap: 6px;
+    width: 75%;
   }
 
+  .skill-bar {
+    border-top-right-radius: 3em;
+    border-bottom-right-radius: 3em;
+  }
+  
   .skill-level {
-    padding: 7px;
-    border-top-right-radius: 2.6em;
-    border-bottom-right-radius: 2.6em;
+    padding: 5px;
+    border-top-right-radius: 3em;
+    border-bottom-right-radius: 3em;
+  }
+
+  .skill-name, .plans, .year-goal {
+    font-size: 4rem;
   }
 
   .skill-name {
-    font-size: 1.75em;
+    padding-right: 20px;
+  }
+
+  .skill-level[style*="width: 0"] .skill-name {
+    display: none;
   }
 }
 
 @media only screen and (min-width: 3840px) and (max-width: 5119px) {
   .octopus {
-    width: 2000px;
+    width: 3500px;
+    height: 1500px;
   }
 
   .head {
-    border-top-left-radius: 30em;
-    border-bottom-left-radius: 30em;
+    border-top-left-radius: 45em;
+    border-bottom-left-radius: 45em;
+    width: 35%;
   }
 
   .skills-container {
     gap: 6px;
+    width: 75%;
   }
 
+  .skill-bar {
+    border-top-right-radius: 5em;
+    border-bottom-right-radius: 5em;
+  }
+  
   .skill-level {
-    padding: 8px;
+    padding: 5px;
     border-top-right-radius: 3em;
     border-bottom-right-radius: 3em;
   }
 
+  .skill-name, .plans, .year-goal {
+    font-size: 5rem;
+  }
+
   .skill-name {
-    font-size: 3em;
+    padding-right: 20px;
+  }
+
+  .skill-level[style*="width: 0"] .skill-name {
+    display: none;
   }
 }
 
 @media only screen and (min-width: 5120px) and (max-width: 7680px) {
   .octopus {
     width: 3500px;
+    height: 1500px;
   }
 
   .head {
     border-top-left-radius: 45em;
     border-bottom-left-radius: 45em;
+    width: 35%;
   }
 
   .skills-container {
     gap: 6px;
+    width: 75%;
   }
 
+  .skill-bar {
+    border-top-right-radius: 5em;
+    border-bottom-right-radius: 5em;
+  }
+  
   .skill-level {
-    padding: 10px;
+    padding: 5px;
     border-top-right-radius: 3em;
     border-bottom-right-radius: 3em;
   }
 
+  .skill-name, .plans, .year-goal {
+    font-size: 5rem;
+  }
+
   .skill-name {
-    font-size: 4.5em;
+    padding-right: 20px;
+  }
+
+  .skill-level[style*="width: 0"] .skill-name {
+    display: none;
   }
 }
